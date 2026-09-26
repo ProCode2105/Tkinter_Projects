@@ -8,12 +8,20 @@ def AddScore():
     score += 1
     lbl.config(text=f"Score: {score}")
 
+def ResetScore():
+    global score
+    score = 0
+    lbl.config(text=f"Score: {score}")
+
 lbl=tk.Label(root, text=f"Score: {score}")
 
-btn = tk.Button(root, text="Click Me For More Points!", command=AddScore)
+clckbtn = tk.Button(root, text="Click Me For More Points!", command=AddScore)
+
+resetbtn = tk.Button(root, text="RESET SCORE", command=ResetScore)
 
 lbl.grid(row=0, column=0)
-btn.grid(row=1, column=0)
+clckbtn.grid(row=1, column=0)
+resetbtn.grid(row=1, column=1)
 
 root.mainloop()
 
