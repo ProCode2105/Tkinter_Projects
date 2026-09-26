@@ -21,7 +21,7 @@ resetbtn = tk.Button(root, text="RESET SCORE", command=ResetScore)
 
 lbl.grid(row=0, column=0)
 clckbtn.grid(row=1, column=0)
-resetbtn.grid(row=1, column=1)
+resetbtn.grid(row=2, column=0)
 
 root.mainloop()
 
