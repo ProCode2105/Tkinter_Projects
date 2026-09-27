@@ -36,6 +36,7 @@ notificationsLbl = tk.Label(root, text=f"Notifications: {Notifications}")
 Screlbl.pack()
 clckbtn.pack()
 resetbtn.pack()
+extraclckbtn.place(relx=0.0, rely=1.0,anchor='sw')
 notificationsLbl.place(relx=1.0, rely=0.0,anchor='ne')
 
 root.mainloop()
