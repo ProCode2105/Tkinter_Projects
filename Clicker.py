@@ -1,4 +1,5 @@
 import tkinter as tk
+import time
 root = tk.Tk()
 root.geometry("500x400")
 Score = 0
@@ -16,6 +17,7 @@ def Reset():
     global Score
     Score = 0
     lbl.config(text=f"Score: {Score}")
+    Notifications = f"You have reset the game. @ {time.strftime("%H:%M")}"
 
 lbl=tk.Label(root, text=f"Score: {Score}")
 
