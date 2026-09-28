@@ -19,7 +19,7 @@ def Reset():
 
 lbl=tk.Label(root, text=f"Score: {Score}")
 
-clckbtn = tk.Button(root, text="Click Me For More Points!", command=AddScore)
+clckbtn = tk.Button(root, text="+1 Click!", command=AddScore)
 
 resetbtn = tk.Button(root, text="RESET", command=Reset)
 
