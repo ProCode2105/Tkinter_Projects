@@ -25,18 +25,18 @@ def ExtraClck():
 
 Screlbl=tk.Label(root, text=f"Score: {Score}")
 
-clckbtn = tk.Button(root, text=f"Click Me For {AddClickScore} Point(s)!", command=AddScore)
+clckbtn = tk.Button(root, text=f"Click Me For {AddClickScore} Click(s)!", command=AddScore)
 
 resetbtn = tk.Button(root, text="RESET", command=Reset)
 
-extraclckbtn = tk.Button(root, text="Click me for 1 more click.", command=ExtraClck)
++oneclckbtn = tk.Button(root, text="+1 click", command=ExtraClck)
 
 notificationsLbl = tk.Label(root, text=f"Notifications: {Notifications}")
 
 Screlbl.pack()
 clckbtn.pack()
 resetbtn.pack()
-extraclckbtn.place(relx=0.0, rely=1.0,anchor='sw')
++oneclckbtn.place(relx=0.0, rely=1.0,anchor='sw')
 notificationsLbl.place(relx=1.0, rely=0.0,anchor='ne')
 
 root.mainloop()
