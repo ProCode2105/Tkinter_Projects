@@ -15,11 +15,11 @@ def AddScore():
 
 def Reset():
     global Score
+    global Notifications
     Score = 0
     Screlbl.config(text=f"Score: {Score}")
-
-    global Notifications
     Notifications = f"You have reset the game. @ {time.strftime('%H:%M')}"
+    notificationsLbl.config(text=Notifications)
 
 def ExtraClck():
     global AddClickScore
@@ -30,7 +30,7 @@ def ExtraClck():
         notificationsLbl.config(text=f"You have purchased an extra click. @ {time.strftime('%H:%M')}")
         AddClickScore += 1
     else:
-        notificationsLbl.config(text=f"You do not have enough points to purchase an extra click. @ {time.strftime('%H:%M')}")
+        notificationsLbl.config(text=f"You do not have enough clicks to purchase an extra click. @ {time.strftime('%H:%M')}")
 
     clckbtn.config(text=f"Click Me For {AddClickScore} Point(s)!")
 
@@ -50,7 +50,7 @@ Screlbl.pack()
 clckbtn.pack()
 resetbtn.pack()
 extraclckbtn.place(relx=0.0, rely=1.0,anchor='sw')
-notificationsLbl.place(relx=1.0, rely=0.92,anchor='se')
+notificationsLbl.place(relx=1.0, rely=0.93,anchor='se')
 
 
 root.mainloop()
