@@ -1,7 +1,7 @@
 import tkinter as tk
 import time
 root = tk.Tk()
-root.geometry("500x400")
+root.geometry("500x650")
 Score = 0
 AddClickScore = 1
 Notifications = ""
@@ -30,7 +30,7 @@ def ExtraClck():
         notificationsLbl.config(text=f"You have purchased an extra click. @ {time.strftime('%H:%M')}")
         AddClickScore += 1
     else:
-        notificationsLbl.config(text=f"You do not have enough clicks to purchase an extra click. @ {time.strftime('%H:%M')}")
+        notificationsLbl.config(text=f"You do not have enough clicks to purchase an extra click. You have {Score} points. @ {time.strftime('%H:%M')}")
 
     clckbtn.config(text=f"Click Me For {AddClickScore} Point(s)!")
 
@@ -44,7 +44,7 @@ extraclckbtn = tk.Button(root, text="Click me for 1 more click. (Cost: 10 Points
 
 
 
-notificationsLbl = tk.Label(root, text=f"Notifications: {Notifications}")
+notificationsLbl = tk.Label(root, text=f"Notifications: {Notifications}", wraplength=490, justify="left" )
 
 Screlbl.pack()
 clckbtn.pack()
