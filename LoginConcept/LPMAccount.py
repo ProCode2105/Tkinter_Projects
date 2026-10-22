@@ -17,7 +17,11 @@ def Login():
 LoginEntry = ctk.CTkEntry(root)
 LoginEntry.pack(pady=10)
 
+PasswordEntry = ctk.CtkEntry(root)
+
 LoginBtn = ctk.CTkButton(root, text="Login", command=Login)
+
+LoginEntry.pack(pady=10)
 LoginBtn.pack(pady=10)
 
 root.mainloop()
