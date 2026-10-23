@@ -1,27 +1,40 @@
 import customtkinter as ctk
 
+ctk.set_appearance_mode("System")
+ctk.set_default_color_theme("gold")
+
 root = ctk.CTk()
 root.geometry("400x550")
 root.title("LPM Account")
 
-def Login():
-    global LoginEntry
+def SignUp():
+    global UsernameEntry
     global Username
-    Username = LoginEntry.get()
+    global Alerts
+    Username = UsernameEntry.get()
     if Username:
-        Username = LoginEntry.get()
-        LoginEntry.delete(0, ctk.END)
+        Username = UsernameEntry.get()
+        UsernameEntry.delete(0, ctk.END)
+        Password = PasswordEntry.get()
+        PasswordEntry.delete(0, ctk.END)
     else:
-        print("Please enter a username.")
+        Alerts = "Please enter a username and password"
+        AlertsLbl.configure(text=f"{Alerts}")
 
-LoginEntry = ctk.CTkEntry(root)
-LoginEntry.pack(pady=10)
+Alerts = ""
 
-PasswordEntry = ctk.CtkEntry(root)
+UsernameEntry = ctk.CTkEntry(root)
+UsernameLbl = ctk.CTkLabel(root, text="Username:")
+PasswordEntry = ctk.CTkEntry(root, show="*")
+PasswordLbl = ctk.CTkLabel(root, text="Password:")
+SignUpBtn = ctk.CTkButton(root, text="SignUp", command=SignUp)
+AlertsLbl = ctk.CTkLabel(root, text=f"{Alerts}", font=("Arial", 12),text_color="red")
 
-LoginBtn = ctk.CTkButton(root, text="Login", command=Login)
-
-LoginEntry.pack(pady=10)
-LoginBtn.pack(pady=10)
+UsernameLbl.pack(pady=10)
+UsernameEntry.pack(pady=10)
+PasswordLbl.pack(pady=10)
+PasswordEntry.pack(pady=10)
+SignUpBtn.pack(pady=10)
+AlertsLbl.pack(ipadx=0.0, ipady=1.0, anchor="sw")
 
 root.mainloop()
