@@ -1,4 +1,6 @@
 import customtkinter as ctk
+import time
+import LPMHome
 
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("gold")
@@ -54,8 +56,10 @@ def Login():
                 for line in f:
                     stored_username, stored_password = line.strip().split(":")
                     if LUsername == stored_username and LPassword == stored_password:
-                        Alerts = "Login successful"
-                        AlertsLbl.configure(text=f"{Alerts}", text_color="green")
+                        AlertsLbl.configure(text="Login successful", text_color="green")
+                        root.after(1000, lambda: AlertsLbl.configure(text="Loading Window...", text_color="green"))
+                        root.after(2500, lambda: [root.destroy(), LPMHome.Launch(LUsername)])
+
                         return True
             Alerts = "Invalid username or password"
             AlertsLbl.configure(text=f"{Alerts}", text_color="red")
