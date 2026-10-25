@@ -1,5 +1,4 @@
 import customtkinter as ctk
-import time
 import LPMHome
 
 ctk.set_appearance_mode("System")
@@ -11,6 +10,11 @@ root.geometry("400x600")
 root.title("LPM Account")
 
 FilePath = "LPMAccountFiles/UsernameAndPassword.txt"
+
+def OpenHome():
+    root.destroy()
+    LPMHome.Launch(LUsername = LUsername, LPassword = LPassword)
+
 def SignUp():
     global SUUsername
     global Alerts
@@ -58,7 +62,7 @@ def Login():
                     if LUsername == stored_username and LPassword == stored_password:
                         AlertsLbl.configure(text="Login successful", text_color="green")
                         root.after(1000, lambda: AlertsLbl.configure(text="Loading Window...", text_color="green"))
-                        root.after(2500, lambda: [root.destroy(), LPMHome.Launch(LUsername)])
+                        root.after(2500, OpenHome)
 
                         return True
             Alerts = "Invalid username or password"
